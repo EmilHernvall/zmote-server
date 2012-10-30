@@ -4,24 +4,37 @@ body {
 	font-family: Helvetica, sans-serif;
 	font-weight: 100
 }
+#wrapper {
+	width: 480px;
+	margin:auto;
+}
 h1 {
 	font-weight: 700;
+	color: #fff;
 }
 p {
 	font-size:12px;
+	color: #fff;
+	text-align:left;
 }
-</style>
-<div id="wrapper" style="margin:auto:margin-top: 200px">
+#copyright {
+	font-size:12px;
+	color: #666;
+	text-align:center;
+}
 
+</style>
+
+<div id="wrapper" style="margin:auto:margin-top: 200px">
 	<center>
 		<% for i in 0..5 %>
-		<img src="http://bestanimations.com/Humans/Skulls/Skull-04-june.gif" style="margin:auto;">
-
+		<img src="http://bestanimations.com/Humans/Skulls/Skull-04-june.gif">
 		<% if i == 2 %>
-		<h1 style="color: #fff">Zmote-app website of death!!!</h1>
+		<h1>Zmote-app website of DOOM!!!</h1>
+		<p>Returns a <a href="/test/json">json object:</a></br>		</p>
 		<br/>
 		<% end %>
 		<% end %>
 	</center>
 </div>
-<p style="color: #666;text-align:center;">Copyright © Viktor Dahl 2012</p>
+<p id="copyright">Copyright © Viktor Dahl 2012</p>

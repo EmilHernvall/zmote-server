@@ -1,0 +1,33 @@
+
+
+Started GET "/assets/rails.png" for 95.196.210.39 at 2012-10-30 13:53:56 +0000
+Connecting to database specified by database.yml
+Served asset /rails.png - 304 Not Modified (5ms)
+
+
+Started GET "/assets/rails.png" for 130.236.227.30 at 2012-10-30 13:54:06 +0000
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 130.236.227.30 at 2012-10-30 13:54:19 +0000
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 130.236.209.133 at 2012-10-30 13:56:54 +0000
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 130.236.209.133 at 2012-10-30 13:56:55 +0000
+Served asset /rails.png - 200 OK (0ms)
+
+
+Started GET "/assets/rails.png" for 130.236.209.133 at 2012-10-30 13:56:58 +0000
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 130.236.209.133 at 2012-10-30 13:56:59 +0000
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 130.236.209.133 at 2012-10-30 13:56:59 +0000
+Served asset /rails.png - 304 Not Modified (0ms)

@@ -1,0 +1,8 @@
+<h1>Retrieve</h1>
+
+<p>
+<% 
+req = Net::HTTP.get_response(URI.parse("http://localhost:3000/test/json"))
+json = controller.parseJson(req) 
+%>
+</p>

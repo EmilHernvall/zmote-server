@@ -1,27 +1,23 @@
-class Person
-  attr_accessor :fname, :lname
-end
-
 class TestController < ApplicationController
   # layout "no_html_tags"
 
   def index
-    
+
   end
-  
+
   def json
-    p = Person.new
-    p.fname = "Viktor"
-    p.lname = "Dahl"
-    render :json => p
+    # u = User.create( :email => "viktor.dahl@z-app.se", :firstName => "Viktor", :lastName => "Dahl")
+    @users = User
+    render :json => @users.first
+  end
+
+  def retrieve
+    @users = User
   end
   
-  def http_request1
-     render :text => 
-     "ID: "+
-     params[:id]+
-     "\n"+"asdf"+"\n"
+  def parseJson(jsonObject)
+    hash = JSON.parse(jsonObject)
+    return hash['firstName']
   end
-  
   
 end

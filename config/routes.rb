@@ -1,6 +1,8 @@
 Zchat::Application.routes.draw do
   get "test/index"
-  get "test/json"
+  # get "test/json"
+  
+  match "test/:action" => "test"
 
   # get "home/index"
   match "test" => "test#index"

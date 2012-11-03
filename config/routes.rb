@@ -1,10 +1,14 @@
 Zchat::Application.routes.draw do
+  resources :users
+
+  resources :posts
+
   get "test/index"
   get "test/json"
 
   # get "home/index"
-  match "test" => "test#index"
-  match "test/:action/:id" => "test"
+  #match "test" => "test#index"
+  #match "test/:action/:id" => "test"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

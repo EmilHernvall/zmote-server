@@ -11,12 +11,53 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031120311) do
+ActiveRecord::Schema.define(:version => 20121103155750) do
+
+  create_table "channels", :force => true do |t|
+    t.string   "name"
+    t.string   "iconURL"
+    t.string   "channelURL"
+    t.integer  "program_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "timestamp"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "programs", :force => true do |t|
+    t.string   "name"
+    t.integer  "post_id"
+    t.integer  "channel_id"
+    t.date     "duration"
+    t.date     "starttime"
+    t.string   "description"
+    t.string   "shortdescription"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "tests", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
+    t.string   "name"
     t.string   "email"
-    t.string   "firstName"
-    t.string   "lastName"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

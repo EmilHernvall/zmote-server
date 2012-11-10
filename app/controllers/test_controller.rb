@@ -6,18 +6,15 @@ class TestController < ApplicationController
   end
 
   def json
-    # u = User.create( :email => "viktor.dahl@z-app.se", :firstName => "Viktor", :lastName => "Dahl")
-    @users = User
-    render :json => @users.first
-  end
-
-  def retrieve
-    @users = User
+    render :json => User.first
   end
   
-  def parseJson(jsonObject)
-    hash = JSON.parse(jsonObject)
-    return hash['firstName']
+  def some_action
+    id = params[:id]
+    name = params[:name]
+    print 'hej'
+    # Do some stuff, can't get the id value from the url
   end
   
+ 
 end

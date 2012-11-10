@@ -1,6 +1,7 @@
 Zchat::Application.routes.draw do
+  get "preview/index"
+  match "preview" => "preview#index"
   resources :users
-
   resources :posts
 
   get "test/index"

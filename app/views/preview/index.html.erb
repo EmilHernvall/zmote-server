@@ -1,0 +1,23 @@
+<h1>EPG</h1>
+
+<% 
+# test = TestController
+
+%>
+<p>Hej</p>
+<%
+count = 0
+
+for channel in @epg
+	ch = Channel.new
+	ch.name = channel['name']
+	ch.channelURL = channel['url']
+	ch.iconURL = channel['url']
+	ch.save
+	for program in channel['programs']
+		prog = Program.new
+		prog
+	end
+end
+
+%>

@@ -50,11 +50,6 @@ ActiveRecord::Schema.define(:version => 20121103155750) do
     t.datetime "updated_at",       :null => false
   end
 
-  create_table "tests", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"

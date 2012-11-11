@@ -1,13 +1,16 @@
 class PostController < ApplicationController
 
-
-
   def insert_user
     name = params[:name]
     email = params[:email]
-    render :json => User.create(:name => name, :email => email)
+    # render :json => User.create(:name => name, :email => email)
   end
 
+
+=begin
+  Inserts program in the database with the url:
+  rails.z-app.se/post/insert_program
+=end
   def insert_program
     name = params[:name]
     duration = params[:duration]
@@ -19,13 +22,19 @@ class PostController < ApplicationController
 
     theProgram = Program.new
     theProgram.name = name
+    # Changes the '.' to ':'. Otherwise the Time.parse thinks the time is a date.
+    for i in 0..duration.length 
+      if duration[i] == '.'
+        duration[i] = ':'
+      end
+    end
     theProgram.duration = Time.parse(duration)
     theProgram.starttime = DateTime.parse(start_time)
     theProgram.description = description
     theProgram.shortdescription = short_description
 
     theProgram.channel_id = theChannel
-    render :json => theProgram.save
+    # render :json => theProgram.save
   end
 
   def insert_channel

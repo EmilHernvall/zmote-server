@@ -6,7 +6,8 @@ class Program < ActiveRecord::Base
   validates :name, :presence => true
   validates :starttime, :presence => true
   validates :description, :presence => true
-  validates :shortdescription, :presence => true
+  # shortdesc is sometimes empty
+  # validates :shortdescription, :presence => true
   validates :channel_id, :presence => true
 
   #validates :name, :starttime, :channel_id, :uniqueness => true

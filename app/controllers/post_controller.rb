@@ -1,18 +1,6 @@
-class TestController < ApplicationController
-  # layout "no_html_tags"
+class PostController < ApplicationController
 
-  def index
-  end
-  
-  def get_posts_by_user
-    name = params[:name]
-    render :json => User.where(:name => name)
-  end
 
-  def get_posts_by_email
-    email = params[:email]
-    render :json => User.where(:email => email)
-  end
 
   def insert_user
     name = params[:name]
@@ -73,17 +61,3 @@ class TestController < ApplicationController
     end
 
   end
-
-  def get_posts_by_user
-    username = params[:username]
-    theUser = User.where(:name => username)
-    render :json => Post.where(:user_id => theUser)
-  end
-
-  def parseJson(jsonObject)
-    hash = JSON.parse(jsonObject)
-    return hash['firstName']
-  end
-  
- 
-end

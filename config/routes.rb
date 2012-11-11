@@ -5,9 +5,10 @@ Zchat::Application.routes.draw do
   resources :posts
 
   get "test/index"
-  # get "test/json"
   
   match "test/:action" => "test"
+  
+  # get "post/:action"
 
   # get "home/index"
   #match "test" => "test#index"

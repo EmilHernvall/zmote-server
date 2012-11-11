@@ -4,7 +4,6 @@ class CreateChannels < ActiveRecord::Migration
       t.string :name
       t.string :iconURL
       t.string :channelURL
-      t.integer :program_id
       t.timestamps
     end
   end

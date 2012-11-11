@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(:version => 20121103155750) do
     t.string   "name"
     t.string   "iconURL"
     t.string   "channelURL"
-    t.integer  "program_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -31,19 +30,19 @@ ActiveRecord::Schema.define(:version => 20121103155750) do
   end
 
   create_table "posts", :force => true do |t|
-    t.string   "timestamp"
+    t.datetime "timestamp"
     t.text     "content"
     t.integer  "user_id"
+    t.integer  "program_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "programs", :force => true do |t|
     t.string   "name"
-    t.integer  "post_id"
     t.integer  "channel_id"
-    t.date     "duration"
-    t.date     "starttime"
+    t.time     "duration"
+    t.datetime "starttime"
     t.string   "description"
     t.string   "shortdescription"
     t.datetime "created_at",       :null => false

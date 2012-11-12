@@ -41913,3 +41913,206 @@ Served asset /post.js - 304 Not Modified (0ms)
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-11 15:58:03 +0100
 Served asset /application.js - 304 Not Modified (0ms)
 Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-12 10:16:55 +0100
+Connecting to database specified by database.yml
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 332ms (Views: 331.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /application.css - 304 Not Modified (74ms)
+
+
+Started GET "/assets/preview.css?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /preview.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/test.css?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /test.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /home.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /post.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /post.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/preview.js?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /preview.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /application.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/test.js?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /test.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-11-12 10:16:56 +0100
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/preview/get_epg" for 127.0.0.1 at 2012-11-12 10:17:08 +0100
+
+ActionController::RoutingError (No route matches [GET] "/preview/get_epg"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/viktordahl/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/viktordahl/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/viktordahl/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/preview" for 127.0.0.1 at 2012-11-12 10:17:13 +0100
+Processing by PreviewController#index as HTML
+  Rendered preview/index.html.erb within layouts/application (7128.0ms)
+Completed 500 Internal Server Error in 7176ms
+
+ActionView::Template::Error (Network is unreachable - connect(2)):
+    2: 
+    3: <p>Hej</p>
+    4: 
+    5: <!-- <%= controller.get_epg %> -->
+  app/controllers/preview_controller.rb:12:in `get_epg'
+  app/views/preview/index.html.erb:5:in `_app_views_preview_index_html_erb__2447840130233101712_2162163520'
+
+
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (41.7ms)
+
+
+Started GET "/preview" for 127.0.0.1 at 2012-11-12 10:17:38 +0100
+Processing by PreviewController#index as HTML
+  Rendered preview/index.html.erb within layouts/application (6988.4ms)
+Completed 500 Internal Server Error in 6991ms
+
+ActionView::Template::Error (Network is unreachable - connect(2)):
+    2: 
+    3: <p>Hej</p>
+    4: 
+    5: <!-- <%= controller.get_epg %> -->
+  app/controllers/preview_controller.rb:12:in `get_epg'
+  app/views/preview/index.html.erb:5:in `_app_views_preview_index_html_erb__2447840130233101712_2162163520'
+
+
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+
+
+Started GET "/preview" for 127.0.0.1 at 2012-11-12 10:17:51 +0100
+Processing by PreviewController#index as HTML
+  Rendered preview/index.html.erb within layouts/application (6966.3ms)
+Completed 500 Internal Server Error in 6970ms
+
+ActionView::Template::Error (Network is unreachable - connect(2)):
+    2: 
+    3: <p>Hej</p>
+    4: 
+    5: <%= controller.get_epg %>
+  app/controllers/preview_controller.rb:12:in `get_epg'
+  app/views/preview/index.html.erb:5:in `_app_views_preview_index_html_erb__2447840130233101712_2485564440'
+
+
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.6ms)
+
+
+Started GET "/preview" for 127.0.0.1 at 2012-11-12 10:17:58 +0100
+Processing by PreviewController#index as HTML
+  Rendered preview/index.html.erb within layouts/application (6974.4ms)
+Completed 500 Internal Server Error in 6976ms
+
+ActionView::Template::Error (Network is unreachable - connect(2)):
+    2: 
+    3: <p>Hej</p>
+    4: 
+    5: <%= controller.get_epg %>
+  app/controllers/preview_controller.rb:12:in `get_epg'
+  app/views/preview/index.html.erb:5:in `_app_views_preview_index_html_erb__2447840130233101712_2485564440'
+
+
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.1ms)
+
+
+Started GET "/preview" for 127.0.0.1 at 2012-11-12 10:18:10 +0100
+Connecting to database specified by database.yml
+Processing by PreviewController#index as HTML
+  Rendered preview/index.html.erb within layouts/application (6965.6ms)
+Completed 500 Internal Server Error in 7004ms
+
+ActionView::Template::Error (Network is unreachable - connect(2)):
+    2: 
+    3: <p>Hej</p>
+    4: 
+    5: <%= controller.get_epg %>
+  app/controllers/preview_controller.rb:12:in `get_epg'
+  app/views/preview/index.html.erb:5:in `_app_views_preview_index_html_erb__4348229016978841196_2168611520'
+
+
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/preview" for 127.0.0.1 at 2012-11-12 10:18:17 +0100
+Processing by PreviewController#index as HTML
+  Rendered preview/index.html.erb within layouts/application (6971.5ms)
+Completed 500 Internal Server Error in 6974ms
+
+ActionView::Template::Error (Network is unreachable - connect(2)):
+    2: 
+    3: <p>Hej</p>
+    4: 
+    5: <%= controller.get_epg %>
+  app/controllers/preview_controller.rb:12:in `get_epg'
+  app/views/preview/index.html.erb:5:in `_app_views_preview_index_html_erb__4348229016978841196_2168611520'
+
+
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/viktordahl/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.8ms)
+
+
+Started GET "/preview" for 127.0.0.1 at 2012-11-12 10:18:24 +0100
+Processing by PreviewController#index as HTML
+  Rendered preview/index.html.erb within layouts/application (3862.7ms)
+Completed   in 3868ms
+Connecting to database specified by database.yml

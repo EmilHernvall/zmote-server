@@ -45,5 +45,12 @@ class PreviewController < ApplicationController
     return ch.iconURL
     # id: integer, name: string, channel_id: integer, duration: time, starttime: datetime, description: string, shortdescription: string,
   end
+  
+  # def return_epg
+  #   class Epg
+  #     
+  #   end
+  # end
+  
 
 end

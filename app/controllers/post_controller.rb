@@ -74,4 +74,24 @@ class PostController < ApplicationController
       render :json => "The user query returned null."
     end
   end
+  def insert_comment
+    username = params[:username]
+    postId = params[:post_id]
+    content = params[:content]
+    timestamp = DateTime.parse(params[:timestamp])
+
+    theUser = User.where(:name => username)
+    if theUser != []
+      thePost = Post.where(:name => postId)
+
+      theComment = Comment.new
+      theComment.user = theUser[0]
+      theComment.post = thePost[0]
+      theComment.content = content
+      theComment.timestamp = timestamp
+      render :json => theComment.save
+    else
+      render :json => nil
+    end
+  end
 end

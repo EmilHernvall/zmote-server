@@ -49,48 +49,7 @@ class TestController < ApplicationController
 
   end
 
-  def insert_post
-    username = params[:username]
-    program_name = params[:program_name]
-    content = params[:content]
-    timestamp = DateTime.parse(params[:timestamp])
 
-    theUser = User.where(:name => username)
-    if theUser != []
-      theProgram = Program.where(:name => program_name)
-
-      thePost = Post.new
-      thePost.user = theUser
-      thePost.program = theProgram
-      thePost.content = content
-      thePost.timestamp = timestamp
-      render :json => thePost.save
-    else
-      render :json => nil
-    end
-
-  end
-
-  def insert_comment
-    username = params[:username]
-    postId = params[:post_id]
-    content = params[:content]
-    timestamp = DateTime.parse(params[:timestamp])
-
-    theUser = User.where(:name => username)
-    if theUser != []
-      thePost = Post.where(:name => postId)
-
-      theComment = Comment.new
-      theComment.user = theUser
-      theComment.post = thePost
-      theComment.content = content
-      theComment.timestamp = timestamp
-      render :json => theComment.save
-    else
-      render :json => nil
-    end
-  end
 
   def get_posts_by_user
     username = params[:username]

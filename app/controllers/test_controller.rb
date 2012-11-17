@@ -84,6 +84,9 @@ class TestController < ApplicationController
     hash = JSON.parse(jsonObject)
     return hash['firstName']
   end
-  
+
+  def get_program_by_id
+    render :json => Program.where(:id => params[:program_id])
+  end
  
 end

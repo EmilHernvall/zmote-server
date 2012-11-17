@@ -82,7 +82,7 @@ class PostController < ApplicationController
 
     theUser = User.where(:name => username)
     if theUser != []
-      thePost = Post.where(:name => postId)
+      thePost = Post.where(:id => postId)
 
       theComment = Comment.new
       theComment.user = theUser[0]

@@ -64,7 +64,7 @@ class PostController < ApplicationController
         thePost.user = theUser[0]
         thePost.program = theProgram[0]
         thePost.content = content
-        thePost.timestamp = timestamp
+        #thePost.timestamp = timestamp
         render :json => thePost.save
 
       else

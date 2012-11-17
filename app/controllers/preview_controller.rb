@@ -35,7 +35,7 @@ class PreviewController < ApplicationController
         prog.starttime = DateTime.parse(program['start'])
         prog.description = program['exttext']
         prog.shortdescription = program['shorttext']
-        prog.channel_id = ch
+        prog.channel_id = Channel.where(:name => channel['name'])[0]
         prog.save
         # return program['exttext']
         #break

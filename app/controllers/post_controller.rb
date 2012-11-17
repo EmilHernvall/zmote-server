@@ -28,7 +28,7 @@ class PostController < ApplicationController
         duration[i] = ':'
       end
     end
-    theProgram.duration = Time.parse(duration)
+    theProgram.duration = (duration)
     theProgram.starttime = DateTime.parse(start_time)
     theProgram.description = description
     theProgram.shortdescription = short_description

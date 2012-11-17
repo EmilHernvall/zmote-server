@@ -3,7 +3,7 @@ class CreatePrograms < ActiveRecord::Migration
     create_table :programs do |t|
       t.string :name
       t.integer :channel_id
-      t.time :duration
+      t.integer :duration
       t.datetime :starttime
       t.string :description
       t.string :shortdescription

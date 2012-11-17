@@ -29,7 +29,7 @@ class PreviewController < ApplicationController
             duration[i] = ':'
           end
         end
-        prog.duration = (duration)
+        prog.duration = Integer.parse(duration)
         prog.name = program['name']
         
         prog.starttime = DateTime.parse(program['start'])

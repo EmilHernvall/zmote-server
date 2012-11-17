@@ -3,7 +3,7 @@ class PostController < ApplicationController
   def insert_user
     name = params[:name]
     email = params[:email]
-    # render :json => User.create(:name => name, :email => email)
+    render :json => User.create(:name => name, :email => email)
   end
 
 
@@ -23,7 +23,7 @@ class PostController < ApplicationController
     theProgram = Program.new
     theProgram.name = name
     # Changes the '.' to ':'. Otherwise the Time.parse thinks the time is a date.
-    for i in 0..duration.length 
+    for i in 0..duration.length
       if duration[i] == '.'
         duration[i] = ':'
       end
@@ -68,5 +68,5 @@ class PostController < ApplicationController
     else
       render :json => nil
     end
-
   end
+end

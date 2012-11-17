@@ -38,9 +38,9 @@ class PreviewController < ApplicationController
         prog.channel_id = ch
         prog.save
         # return program['exttext']
-        break
+        #break
       end
-      break
+      #break
     end
     return ch.iconURL
     # id: integer, name: string, channel_id: integer, duration: time, starttime: datetime, description: string, shortdescription: string,

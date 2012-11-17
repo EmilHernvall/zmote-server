@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :timestamp, :user_id, :program_id
+  attr_accessible :content, :timestamp
 
   belongs_to :user
   belongs_to :program

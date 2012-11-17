@@ -59,12 +59,16 @@ class PostController < ApplicationController
     if theUser != []
       theProgram = Program.where(:name => program_name)
 
-      thePost = Post.new
-      thePost.user_id = theUser
-      thePost.program_id = theProgram
-      thePost.content = content
-      thePost.timestamp = timestamp
-      render :json => thePost.save
+      if theProgram != []
+        thePost = Post.new
+        thePost.user_id = theUser
+        thePost.program_id = theProgram
+        thePost.content = content
+        thePost.timestamp = timestamp
+        render :json => thePost.save
+      else
+        render :json => nil
+      end
     else
       render :json => nil
     end

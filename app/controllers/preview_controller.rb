@@ -35,7 +35,7 @@ class PreviewController < ApplicationController
         prog.starttime = DateTime.parse(program['start'])
         prog.description = program['exttext']
         prog.shortdescription = program['shorttext']
-        prog.channel_id = ch
+        prog.channel = ch
         prog.save
         # return program['exttext']
         break

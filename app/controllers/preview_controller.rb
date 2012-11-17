@@ -30,7 +30,7 @@ class PreviewController < ApplicationController
         #  end
         #end
         intDuration = duration.split(".").map(&:to_i)
-        minutes = intDuration[2] * 60 + intDuration[1];
+        minutes = intDuration[0] * 60 + intDuration[1];
         prog.duration = minutes
         prog.name = program['name']
         

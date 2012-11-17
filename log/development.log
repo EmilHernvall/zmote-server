@@ -42581,3 +42581,12 @@ Processing by PostController#insert_user as HTML
   [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'marwi' LIMIT 1[0m
   [1m[35m (0.1ms)[0m  rollback transaction
 Completed 200 OK in 104ms (Views: 0.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/post/insert_user?name=Marcus&email=marwi" for 127.0.0.1 at 2012-11-17 12:13:39 +0100
+Processing by PostController#insert_user as HTML
+  Parameters: {"name"=>"Marcus", "email"=>"marwi"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'marwi' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 1.3ms)

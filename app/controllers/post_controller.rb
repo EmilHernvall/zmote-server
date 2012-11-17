@@ -53,7 +53,7 @@ class PostController < ApplicationController
     username = params[:username]
     program_name = params[:program_name]
     content = params[:content]
-    timestamp = DateTime.parse(params[:timestamp])
+    #timestamp = DateTime.parse(params[:timestamp])
 
     theUser = User.where(:name => username)
     if theUser != []
@@ -104,7 +104,7 @@ class PostController < ApplicationController
     render :json => Post.where(:program_id => theProgram[0].id)
   end
 
-  def user_by_id
+  def get_user_by_id
     render :json => User.where(:id => params[:id])
   end
 end

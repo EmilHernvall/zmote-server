@@ -20,7 +20,7 @@ class PreviewController < ApplicationController
       ch.iconURL = '/mdio/channelicon?onid=' + channel['onid'].to_s() + '&tsid='+ channel['tsid'].to_s() + '&sid=' + channel['sid'].to_s()
       ch.save
       # ch = Channel.where(:name => channel['name'])
-      break
+      #break
       for program in channel['programs']
         prog = Program.new
         duration = program['duration']

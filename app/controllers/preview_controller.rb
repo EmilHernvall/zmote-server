@@ -24,11 +24,11 @@ class PreviewController < ApplicationController
       for program in channel['programs']
         prog = Program.new
         duration = program['duration']
-        for i in 0..duration.length
-          if duration[i] == '.'
-            duration[i] = ':'
-          end
-        end
+        #for i in 0..duration.length
+        #  if duration[i] == '.'
+        #    duration[i] = ':'
+        #  end
+        #end
         intDuration = duration.split(".").map(&:to_i)
         minutes = intDuration[2] * 60 + intDuration[1];
         prog.duration = minutes

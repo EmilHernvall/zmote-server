@@ -77,7 +77,7 @@ class TestController < ApplicationController
   def get_posts_by_user
     username = params[:username]
     theUser = User.where(:name => username)
-    render :json => Post.where(:user => theUser[0])
+    render :json => Post.where(:user_id => theUser[0].id)
   end
 
   def parseJson(jsonObject)

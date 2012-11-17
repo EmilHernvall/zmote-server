@@ -66,6 +66,7 @@ class PostController < ApplicationController
         thePost.content = content
         thePost.timestamp = timestamp
         render :json => thePost.save
+
       else
         render :text => "The program query returned null."
       end

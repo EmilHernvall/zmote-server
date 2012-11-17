@@ -89,5 +89,9 @@ class TestController < ApplicationController
   def get_program_by_id
     render :json => Program.where(:id => params[:program_id])
   end
+
+  def get_channel_by_id
+    render :json => Channel.where(:id => params[:channel_id])
+  end
  
 end

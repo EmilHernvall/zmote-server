@@ -29,7 +29,9 @@ class PreviewController < ApplicationController
             duration[i] = ':'
           end
         end
-        prog.duration = Integer.parse(duration)
+        intDuration = duration.split(".").map(&:to_i)
+        minutes = intDuration[2] * 60 + intDuration[1];
+        prog.duration = minutes
         prog.name = program['name']
         
         prog.starttime = DateTime.parse(program['start'])

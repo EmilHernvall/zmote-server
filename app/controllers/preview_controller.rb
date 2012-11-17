@@ -42,7 +42,7 @@ class PreviewController < ApplicationController
       end
       #break
     end
-    return ch.iconURL
+    #return ch.iconURL
     # id: integer, name: string, channel_id: integer, duration: time, starttime: datetime, description: string, shortdescription: string,
   end
   

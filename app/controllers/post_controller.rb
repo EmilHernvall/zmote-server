@@ -60,7 +60,7 @@ class PostController < ApplicationController
       theProgram = Program.where(:name => program_name)
 
       thePost = Post.new
-      thePost.user = theUser
+      thePost.user_id = theUser
       thePost.program = theProgram
       thePost.content = content
       thePost.timestamp = timestamp

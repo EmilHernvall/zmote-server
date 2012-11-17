@@ -33,7 +33,7 @@ class PostController < ApplicationController
     theProgram.description = description
     theProgram.shortdescription = short_description
 
-    theProgram.channel_id = theChannel
+    theProgram.channel = theChannel[0]
     # render :json => theProgram.save
   end
 
@@ -99,7 +99,7 @@ class PostController < ApplicationController
     startTime = DateTime.parse(params[:start_time])
     channelName = params[:channel_name]
 
-    theChannel = Channel.where(:name => :channel_name);
+    theChannel = Channel.where(:name => :channel_name)
     theProgram = Program.where(:name => :program_name, :starttime => startTime, :channel_id => theChannel[0].id)
     render :json => Post.where(:program_id => theProgram[0].id)
   end

@@ -9,7 +9,7 @@ class PreviewController < ApplicationController
     require 'json'
     require 'net/http'
     require 'time'
-    epg = Net::HTTP.get('130.236.248.227', '/mdio/epg') 
+    epg = Net::HTTP.get('130.236.248.226', '/mdio/epg')
     epg = JSON.parse(epg)
 
     for channel in epg

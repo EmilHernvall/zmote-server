@@ -19,7 +19,7 @@ class PreviewController < ApplicationController
       # iconURL needs the adress to a STB that the server don't know.
       ch.iconURL = '/mdio/channelicon?onid=' + channel['onid'].to_s() + '&tsid='+ channel['tsid'].to_s() + '&sid=' + channel['sid'].to_s()
       ch.save
-      # ch = Channel.where(:name => channel['name'])
+      ch = Channel.where(:name => channel['name'])
       #break
       for program in channel['programs']
         prog = Program.new
@@ -35,7 +35,7 @@ class PreviewController < ApplicationController
         prog.starttime = DateTime.parse(program['start'])
         prog.description = program['exttext']
         prog.shortdescription = program['shorttext']
-        prog.channel_id = Channel.where(:name => channel['name'])[0]
+        prog.channel_id = ch[0]#Channel.where(:name => channel['name'])[0]
         prog.save
         # return program['exttext']
         #break

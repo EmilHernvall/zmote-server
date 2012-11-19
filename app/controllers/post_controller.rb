@@ -51,7 +51,7 @@ class PostController < ApplicationController
 
   def insert_post
     username = params[:username]
-    program_name = params[:program_name]
+    program_name = params[:program_name].html_safe
     content = params[:content]
     #timestamp = DateTime.parse(params[:timestamp])
 
@@ -78,7 +78,7 @@ class PostController < ApplicationController
     username = params[:username]
     postId = params[:post_id]
     content = params[:content]
-    timestamp = DateTime.parse(params[:timestamp])
+    #timestamp = DateTime.parse(params[:timestamp])
 
     theUser = User.where(:name => username)
     if theUser != []
@@ -96,11 +96,12 @@ class PostController < ApplicationController
   end
   def get_post_by_program
     programName = params[:program_name]
-    startTime = DateTime.parse(params[:start_time])
+    #startTime = DateTime.parse(params[:start_time])
     channelName = params[:channel_name]
 
     theChannel = Channel.where(:name => :channel_name)
-    theProgram = Program.where(:name => :program_name, :starttime => startTime, :channel_id => theChannel[0].id)
+    #theProgram = Program.where(:name => :program_name, :starttime => startTime, :channel_id => theChannel[0].id)
+    theProgram = Program.where(:name => :program_name, :channel_id => theChannel[0].id)
     render :json => Post.where(:program_id => theProgram[0].id)
   end
 

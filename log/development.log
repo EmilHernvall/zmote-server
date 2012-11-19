@@ -42599,3 +42599,4 @@ Processing by PostController#insert_user as HTML
   [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'marwi' LIMIT 1[0m
   [1m[35m (0.1ms)[0m  rollback transaction
 Completed 200 OK in 131ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+Connecting to database specified by database.yml

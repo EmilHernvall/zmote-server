@@ -96,12 +96,12 @@ class PostController < ApplicationController
   end
   def get_post_by_program
     programName = params[:program_name]
-    #startTime = DateTime.parse(params[:start_time])
+    startTime = DateTime.parse(params[:start_time])
     channelName = params[:channel_name]
 
     theChannel = Channel.where(:name => channelName)
-    #theProgram = Program.where(:name => :program_name, :starttime => startTime, :channel_id => theChannel[0].id)
-    theProgram = Program.where(:name => programName, :channel_id => theChannel[0].id)
+    theProgram = Program.where(:name => :program_name, :starttime => startTime, :channel_id => theChannel[0].id)
+    #theProgram = Program.where(:name => programName, :channel_id => theChannel[0].id)
     render :json => Post.where(:program_id => theProgram[0].id)
   end
 

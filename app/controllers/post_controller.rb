@@ -107,7 +107,8 @@ class PostController < ApplicationController
     theProgram = Program.where(:name => programName, :starttime => startTime.to_time, :channel_id => theChannel[0].id)
     #theProgram = Program.where(:name => programName, :channel_id => theChannel[0].id)
     #render :json => Post.where(:program_id => theProgram[0].id)
-     render :json => Program.find(1).starttime
+     #render :json => Program.find(1).starttime
+    render :json => theProgram.save
   end
 
   def get_user_by_id

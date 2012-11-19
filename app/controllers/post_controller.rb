@@ -1,5 +1,9 @@
 class PostController < ApplicationController
 
+=begin
+  Inserts user in the database with the url:
+  rails.z-app.se/post/insert_user
+=end
   def insert_user
     name = params[:name]
     email = params[:email]
@@ -10,6 +14,13 @@ class PostController < ApplicationController
 =begin
   Inserts program in the database with the url:
   rails.z-app.se/post/insert_program
+  Parameters:
+  Name
+  Duration
+  Starttime
+  Description
+  Shortdescription
+  Channel_name
 =end
   def insert_program
     name = params[:name]

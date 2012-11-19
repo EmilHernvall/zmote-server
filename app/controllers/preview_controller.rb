@@ -17,10 +17,12 @@ class PreviewController < ApplicationController
       ch.name = channel['name']
       ch.channelURL = channel['url']
       # iconURL needs the adress to a STB that the server don't know.
-      ch.iconURL = '/mdio/channelicon?onid=' + channel['onid'].to_s() + '&tsid='+ channel['tsid'].to_s() + '&sid=' + channel['sid'].to_s()
+      # ch.iconURL = '/mdio/channelicon?onid=' + channel['onid'].to_s() + '&tsid='+ channel['tsid'].to_s() + '&sid=' + channel['sid'].to_s()
+      ch.iconURL = 'hej'
       ch.save
-      # ch = Channel.where(:name => channel['name'])
-      break
+      # chid = Channel.where(:name => channel['name'])
+      # break
+      
       for program in channel['programs']
         prog = Program.new
         duration = program['duration']
@@ -31,18 +33,17 @@ class PreviewController < ApplicationController
         end
         prog.duration = Time.parse(duration)
         prog.name = program['name']
-        
         prog.starttime = DateTime.parse(program['start'])
         prog.description = program['exttext']
         prog.shortdescription = program['shorttext']
-        prog.channel_id = ch
+        prog.channel_id = ch.id
         prog.save
         # return program['exttext']
-        break
+        # break
       end
-      break
+      # break
     end
-    return ch.iconURL
+    return ch
     # id: integer, name: string, channel_id: integer, duration: time, starttime: datetime, description: string, shortdescription: string,
   end
   

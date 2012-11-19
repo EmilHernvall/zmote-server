@@ -99,14 +99,15 @@ class PostController < ApplicationController
     #startTime = DateTime.parse(params[:start_time])
     startTime = DateTime.new(params[:year].to_i + 1900, params[:month].to_i, params[:day].to_i, params[:hours].to_i, params[:minutes].to_i, 0)
 
-    render :text => startTime
+    #render :text => startTime
 
     channelName = params[:channel_name]
 
     theChannel = Channel.where(:name => channelName)
     theProgram = Program.where(:name => programName, :starttime => startTime, :channel_id => theChannel[0].id)
     #theProgram = Program.where(:name => programName, :channel_id => theChannel[0].id)
-    #render :json => Post.where(:program_id => theProgram[0].id)
+    render :json => Post.where(:program_id => theProgram[0].id)
+
   end
 
   def get_user_by_id

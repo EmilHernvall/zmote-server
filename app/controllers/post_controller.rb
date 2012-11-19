@@ -97,7 +97,7 @@ class PostController < ApplicationController
   def get_post_by_program
     programName = params[:program_name]
     #startTime = DateTime.parse(params[:start_time])
-    startTime = DateTime.new(params[:year].to_i + 1900, params[:month].to_i, params[:day].to_i, params[:hours].to_i, params[:minutes].to_i, 0)
+    startTime = DateTime.new(params[:year].to_i + 1900, params[:day].to_i, params[:month].to_i, params[:hours].to_i, params[:minutes].to_i, 0)
 
     #render :text => startTime
 

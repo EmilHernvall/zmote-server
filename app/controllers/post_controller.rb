@@ -96,7 +96,8 @@ class PostController < ApplicationController
   end
   def get_post_by_program
     programName = params[:program_name]
-    startTime = DateTime.parse(params[:start_time])
+    #startTime = DateTime.parse(params[:start_time])
+    startTime = DateTime.new(params[:year], params[:month], params[:day], params[:hours], params[:minutes], "0")
     channelName = params[:channel_name]
 
     theChannel = Channel.where(:name => channelName)

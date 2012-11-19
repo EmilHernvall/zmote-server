@@ -8,8 +8,7 @@ Zchat::Application.routes.draw do
   
   match "test/:action" => "test"
   
-  match 'post/:action' => 'post
-  '
+  match "post/:action" => "post"
   # get "post/:action"
 
   # get "home/index"

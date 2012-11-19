@@ -1,8 +1,5 @@
 class TestController < ApplicationController
   # layout "no_html_tags"
-
-  def index
-  end
   
   def get_posts_by_user
     name = params[:name]
@@ -52,38 +49,29 @@ class TestController < ApplicationController
 
   end
 
-  def insert_post
-    username = params[:username]
-    program_name = params[:program_name]
-    content = params[:content]
-    timestamp = DateTime.parse(params[:timestamp])
 
-    theUser = User.where(:name => username)
-    if theUser != []
-      theProgram = Program.where(:name => program_name)
-
-      thePost = Post.new
-      thePost.user = theUser
-      thePost.program = theProgram
-      thePost.content = content
-      thePost.timestamp = timestamp
-      render :json => thePost.save
-    else
-      render :json => nil
-    end
-
-  end
 
   def get_posts_by_user
     username = params[:username]
     theUser = User.where(:name => username)
-    render :json => Post.where(:user_id => theUser)
+    render :json => Post.where(:user_id => theUser[0].id)
   end
 
   def parseJson(jsonObject)
     hash = JSON.parse(jsonObject)
     return hash['firstName']
   end
-  
+
+  def get_program_by_id
+    render :json => Program.where(:id => params[:program_id])
+  end
+
+  def get_channel_by_id
+    render :json => Channel.where(:id => params[:channel_id])
+  end
+
+  def get_comments_by_postid
+    render :json => Comment.where(:post_id => params[:post_id])
+  end
  
 end

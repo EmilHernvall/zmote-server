@@ -50,13 +50,15 @@ class PostController < ApplicationController
   end
 
   def insert_post
-    username = params[:username]
+    username = params[:username].html_safe
     program_name = params[:program_name].html_safe
-    content = params[:content]
+    content = params[:content].html_safe
+    #startTime = DateTime.new(params[:year].to_i + 1900, params[:month].to_i, params[:day].to_i, params[:hours].to_i, params[:minutes].to_i, 0)
+    #channelName = params[:channel_name]
     #timestamp = DateTime.parse(params[:timestamp])
-
+    startTime = DateTime.new(params[:year].to_i + 1900, params[:month].to_i, params[:day].to_i, params[:hours].to_i, params[:minutes].to_i, 0)
     theUser = User.where(:name => username)
-    if theUser != []
+  if theUser != []
       theProgram = Program.where(:name => program_name)
 
       if theProgram != []

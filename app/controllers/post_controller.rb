@@ -14,7 +14,7 @@ class PostController < ApplicationController
   def insert_program
     name = params[:name]
     duration = params[:duration]
-    start_time = params[:starttime]
+    #start_time = params[:starttime]
     description = params[:description]
     short_description = params[:shortdescription]
     channel_name = params[:channel_name]

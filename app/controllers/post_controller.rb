@@ -92,6 +92,7 @@ class PostController < ApplicationController
 
       theComment = Comment.new
       theComment.user = theUser[0]
+      theComment.username = theUser[0].name
       theComment.post = thePost
       theComment.content = content
       #theComment.timestamp = timestamp
@@ -100,6 +101,11 @@ class PostController < ApplicationController
       render :json => nil
     end
   end
+
+  def get_comments_by_postid
+    render :json => Comment.where(:post_id => params[:post_id])
+  end
+
   def get_post_by_program
     programName = params[:program_name]
     #startTime = DateTime.parse(params[:start_time])

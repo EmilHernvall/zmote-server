@@ -68,6 +68,7 @@ class PostController < ApplicationController
         thePost.program_name = program_name
         thePost.channel_name = channelName
         thePost.content = content
+        thePost.starttime=startTime
         #thePost.timestamp = timestamp
         render :json => thePost.save
 

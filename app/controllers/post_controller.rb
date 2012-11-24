@@ -96,7 +96,9 @@ class PostController < ApplicationController
       theComment.post = thePost
       theComment.content = content
       #theComment.timestamp = timestamp
-      render :json => theComment.save
+      theComment.save
+      render :json => theComment
+
     else
       render :json => nil
     end

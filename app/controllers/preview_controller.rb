@@ -25,11 +25,6 @@ class PreviewController < ApplicationController
       for program in channel['programs']
         prog = Program.new
         duration = program['duration']
-        #for i in 0..duration.length
-        #  if duration[i] == '.'
-        #    duration[i] = ':'
-        #  end
-        #end
         intDuration = duration.split(".").map(&:to_i)
         minutes = intDuration[0] * 60 + intDuration[1];
         prog.duration = minutes
@@ -37,22 +32,9 @@ class PreviewController < ApplicationController
         prog.starttime = DateTime.parse(program['start'])
         prog.description = program['exttext']
         prog.shortdescription = program['shorttext']
-        prog.channel_id = ch[0]#Channel.where(:name => channel['name'])[0]
+        prog.channel_id = ch[0]
         prog.save
-        # return program['exttext']
-        #break
       end
-      #break
     end
-    return ch[0]
-    # id: integer, name: string, channel_id: integer, duration: time, starttime: datetime, description: string, shortdescription: string,
-  end
-  
-  # def return_epg
-  #   class Epg
-  #     
-  #   end
-  # end
-  
-
+ end
 end

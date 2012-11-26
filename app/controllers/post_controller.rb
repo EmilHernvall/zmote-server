@@ -57,13 +57,14 @@ class PostController < ApplicationController
     channelName = params[:channel_name]
     #timestamp = DateTime.parse(params[:timestamp])
     startTime = DateTime.new(params[:year].to_i + 1900, params[:month].to_i, params[:day].to_i, params[:hours].to_i, params[:minutes].to_i, 0)
-    theUser = User.where(:name => username)
-  if theUser != []
+    #theUser = User.where(:name => username)
+  #if theUser != []
       #theProgram = Program.where(:name => program_name)
 
       #if theProgram != []
         thePost = Post.new
-        thePost.user = theUser[0]
+        #thePost.user = theUser[0]
+        thePost.username = username
         #thePost.program = theProgram[0]
         thePost.program_name = program_name
         thePost.channel_name = channelName
@@ -76,9 +77,9 @@ class PostController < ApplicationController
       #else
       #  render :text => "The program query returned null."
       #end
-    else
-      render :json => "The user query returned null."
-    end
+    #else
+    #  render :json => "The user query returned null."
+    #end
   end
 
   def insert_comment
@@ -87,22 +88,22 @@ class PostController < ApplicationController
     content = params[:content]
     #timestamp = DateTime.parse(params[:timestamp])
 
-    theUser = User.where(:name => username)
-    if theUser != []
+    #theUser = User.where(:name => username)
+    #if theUser != []
       thePost = Post.find(postId)
       thePost.save
       theComment = Comment.new
-      theComment.user = theUser[0]
-      theComment.username = theUser[0].name
+      #theComment.user = theUser[0]
+      theComment.username = username
       theComment.post = thePost
       theComment.content = content
       #theComment.timestamp = timestamp
       theComment.save
       render :json => theComment
 
-    else
-      render :json => nil
-    end
+    #else
+    #  render :json => nil
+    #end
   end
 
   def get_comments_by_postid

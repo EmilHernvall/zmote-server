@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.datetime :starttime
       t.string :program_name
       t.string :channel_name
+      t.string :username
       t.timestamps
     end
 
